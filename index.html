@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CC Unit-02 - Questions</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: #0077cc;
+      color: white;
+      padding: 1rem 0;
+      text-align: center;
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: auto;
+      padding: 1rem;
+      background: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+      page-break-after: always; /* Ensure separate page per question */
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      margin: 1rem auto;
+    }
+
+    h2 {
+      color: #0077cc;
+      margin-top: 1.5rem;
+    }
+
+    ul {
+      margin: 0.5rem 0 1rem 1.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      header {
+        font-size: 1.2rem;
+      }
+
+      .container {
+        padding: 0.8rem;
+      }
+    }
+
+    @media print {
+      .container {
+        page-break-after: always;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Question 1 -->
+  <header>
+    CC Unit-02
+  </header>
+
+  <div class="container">
+    <h2>1) Implementation levels of Virtualization</h2>
+    <p>Virtualization separates hardware from software to improve efficiency and flexibility</p>
+
+    <img src="implementation.png" alt="Virtualization Diagram Placeholder">
+
+    <h3>i) ISA Level</h3>
+    <ul>
+      <li>ISA stands for the Instruction Set Architecture</li>
+      <li>ISA Level Virtualization means using one ISA to run another ISA</li>
+      <li>It is Achieved through
+        <ul>
+          <li>Code Interpretation</li>
+          <li>Binary Translation</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>ii) Hardware Level</h3>
+    <ul>
+      <li>It happens directly on the physical hardware like CPU, memory, I/O Devices</li>
+      <li>It creates virtual versions of physical hardware
+        <ul>
+          <li>Virtual CPU</li>
+          <li>Virtual Memory</li>
+          <li>Virtual I/O Devices</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>iii) OS Level</h3>
+    <ul>
+      <li>OS stands for Operating System</li>
+      <li>All Containers share the same OS kernel which makes them lightweight</li>
+      <li>Example:
+        <ul>
+          <li>Docker</li>
+          <li>LXC[Linux Container]</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>iv) Library Level</h3>
+    <ul>
+      <li>Virtualization happens at the library or API level</li>
+      <li>It controls the communication between application and system through API hooks</li>
+      <li>Example:
+        <ul>
+          <li>Wine: Windows applications run on Linux</li>
+        </ul>
+      </li>
+    </ul>
+
+    <h3>v) Application Level</h3>
+    <ul>
+      <li>Individual Applications are virtualized not the whole system</li>
+      <li>It is also called as Process Level Virtualization</li>
+      <li>Example
+        <ul>
+          <li>JVM[Java Virtual Machine] to run the Java Programs</li>
+          <li>.NET CLR to run the .NET Applications</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Question 2 -->
+  <header>
+    CC Unit-02
+  </header>
+
+  <div class="container">
+    <h2>2) Full Virtualization, Para Virtualization, Hardware Virtualization, Software Virtualization</h2>
+
+    <h3>Full Virtualization:</h3>
+    <ul>
+      <li>It doesn't know it is running in the virtual Machine.</li>
+      <li>The Guest OS is not modified.</li>
+      <li>OS Runs Normally</li>
+      <li>VMM(also called as Hypervisor) catches the privileged instructions.</li>
+      <li>Full Virtualization is slower</li>
+      <li>Full Virtualization is more complex for hypervisor</li>
+      <li>Full Virtualization is less secure</li>
+      <img src="Full-Virualization.png"/>
+    </ul>
+
+    <h3>Para Virtualization:</h3>
+    <ul>
+      <li>It knows it is running in the virtual Machine.</li>
+      <li>The Guest OS is modified.</li>
+      <li>OS uses hypercalls.</li>
+      <li>It uses hypercalls to directly communicate with the Hypervisor.</li>
+      <li>Para Virtualization is faster.</li>
+      <li>Para Virtualization is less complex for hypervisor.</li>
+      <li>Para Virtualization is more secure</li>
+      <img src="Paravirtualization.png"/>
+    </ul>
+
+    <h3>Hardware Virtualization:</h3>
+    <ul>
+      <li>Virtualization is supported by Hardware.</li>
+      <li>The Guest OS is not required to be modified.</li>
+      <li>Hardware handles Virtualization tasks.</li>
+      <li>Hardware Virtualization shows higher performance.</li>
+      <li>Hardware Virtualization is less complex for hypervisor.</li>
+      <li>Hardware Virtualization is more secure.</li>
+      <img src="Hardware.png"/>
+    </ul>
+
+    <h3>Software Virtualization:</h3>
+    <ul>
+      <li>Virtualization is supported by Software.</li>
+      <li>The Guest OS is not required to be modified.</li>
+      <li>Software handles Virtualization tasks.</li>
+      <li>Software Virtualization shows lower performance.</li>
+      <li>Software Virtualization is more complex for hypervisor</li>
+      <li>Software Virtualization is less secure.</li>
+    </ul>
+  </div>
+
+  <!-- Question 3 -->
+<header>
+  CC Unit-02
+</header>
+
+<div class="container">
+  <h2>3) Types of Virtualization:</h2>
+  <img src="Types-of-Virtualizaton.png"/>
+  <h3>i) Application Virtualization:</h3>
+  <ul>
+    <li>It allows you to use the software without installing its application on your computer.</li>
+    <li>They run on a remote server.</li>
+    <li>You can connect it through Internet.</li>
+    <li>All data are stored on servers not on your computer.</li>
+  </ul>
+
+  <h3>ii) Network Virtualization:</h3>
+  <ul>
+    <li>It creates multiple virtual networks by using just one physical network.</li>
+    <li>It creates virtual versions of Routers, Switches, Firewalls, etc.. by using software</li>
+    <li>A company can create different virtual networks for different departments.</li>
+    <img src="network virtualization.png"/>
+  </ul>
+
+  <h3>iii) Desktop Virtualization:</h3>
+  <ul>
+    <li>It allows logging into your personal computer from anywhere.</li>
+    <li>They run on a remote server.</li>
+    <li>You can connect it through Internet.</li>
+    <li>Easy to update the software for all users at once.</li>
+  </ul>
+
+  <h3>iv) Storage Virtualization:</h3>
+  <ul>
+    <li>It combines multiple storage systems into a single storage system.</li>
+    <li>Continues to work smoothly even if one storage device fails.</li>
+    <li>Storage Virtualization helps in backup, recovery, etc...</li>
+  </ul>
+
+  <h3>v) Server Virtualization:</h3>
+  <ul>
+    <li>It divides one physical server into multiple virtual servers.</li>
+    <li>It creates and manages the virtual servers by using a special software called as Hypervisor.</li>
+    <li>Server Virtualization also helps in backup, recovery, etc...</li>
+    <img src="servervirtualizationcloudcomputing.png"/>
+  </ul>
+
+  <h3>vi) Data Virtualization:</h3>
+  <ul>
+    <li>It gathers the data from different devices into one place.</li>
+    <li>It creates a unified view of the data</li>
+    <li>You can access the data through a single Interface.</li>
+  </ul>
+</div>
+<!-- Question 4 -->
+<header>
+  CC Unit-02
+</header>
+
+<div class="container">
+  <h2>4) Emerging Virtualization Mechanisms and Tools:</h2>
+
+  <h3>i) Data Center Automation Tools:</h3>
+  <ul>
+    <li>Automation in Data Center helps to manage software, hardware and Database efficiently.</li>
+    <li>Key Metrics include:
+      <ul>
+        <li>High Availability</li>
+        <li>Backup Services</li>
+        <li>Resource Sharing</li>
+        <li>Power Management</li>
+      </ul>
+    </li>
+    <li>It improves QoS, QoS stands for Quality of Services.</li>
+  </ul>
+
+  <h3>ii) Server Virtualization:</h3>
+  <ul>
+    <li>It divides one physical server into multiple virtual servers.</li>
+    <li>It creates and manages the virtual servers by using a special software called as Hypervisor.</li>
+    <li>Server Virtualization also helps in backup, recovery, etc...</li>
+    <img src="servervirtualizationcloudcomputing.png" />
+  </ul>
+
+  <h3>iii) Storage Virtualization:</h3>
+  <ul>
+    <li>It combines multiple storage systems into a single storage system.</li>
+    <li>Continues to work smoothly even if one storage device fails.</li>
+    <li>Storage Virtualization helps in backup, recovery, etc...</li>
+  </ul>
+
+  <h3>iv) VI Manager:</h3>
+  <ul>
+    <li>VI Stands for the Virtual Infrastructure Manager</li>
+    <li>This tool helps to manage virtual machines and cloud services efficiently.</li>
+    <li>They are essential for building and maintaining both public and private cloud environments.</li>
+    <li>Example:
+      <ul>
+        <li><strong>OpenNebula</strong></li>
+            <li><strong>Nimbus</strong></li>
+    <li><strong>Eucalyptus</strong></li>
+    <li><strong>VMware vSphere</strong></li>
+      </ul>
+    </li>
+  </ul>
+</div>
+
+<!-- Question 5 -->
+<header>
+  CC Unit-02
+</header>
+
+<div class="container">
+  <h2>5) Containerization:</h2>
+  <ul>
+    <li>Containerization is a lightweight form of Virtualization that runs the applications in an isolated container.</li>
+    <li>Containerization inserts the virtualization layer inside the OS Kernel.</li>
+    <li>Containerization shares the same OS Kernel.</li>
+    <li>Applications running in one container do not affect applications running in other containers.</li>
+    <img src="Containerization-neww.webp"/>
+      <h3>Containerization tools:</h3>
+  <p>Some popular Containerization tools are:</p>
+  <ul>
+    <li><strong>Docker</strong>: Docker is used for creating and deploying the containers.</li>
+    <li><strong>LXC</strong>: LXC stands for Linux Container, LXC is for OS level virtualization.
+    </li>
+    <img src="lxc-vs-docker.jpg"/>
+  </ul>
+  </ul>
+</div>
+<!-- Question 6 -->
+<header>
+  CC Unit-02
+</header>
+
+<div class="container">
+  <h2>6) Physical vs Virtual Clusters:</h2>
+
+  <table border="1" cellspacing="0" cellpadding="8" style="width:100%; border-collapse: collapse; text-align: left;">
+    <thead style="background-color: #0077cc; color: white;">
+      <tr>
+        <th>Physical Clusters</th>
+        <th>Virtual Clusters</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>It consists of multiple physical machines</td>
+        <td>It consists of multiple Virtual Machines</td>
+      </tr>
+      <tr>
+        <td>They are connected through Local Area Network</td>
+        <td>They are connected through a Virtual Network and hosted on the servers</td>
+      </tr>
+      <tr>
+        <td>Physical clusters are less scalable</td>
+        <td>Virtual clusters are highly scalable</td>
+      </tr>
+      <tr>
+        <td>Physical clusters show less flexibility</td>
+        <td>Virtual clusters show more flexibility</td>
+      </tr>
+      <tr>
+        <td>Physical clusters are managed manually</td>
+        <td>Virtual clusters are managed by VMM (Virtual Machine Monitor)</td>
+      </tr>
+    </tbody>
+  </table>
+  <img src="rtual-Cluster-on-a-Physical-Cluster.png"/>
+</div>
+<!-- Question 7 -->
+<header>
+  CC Unit-02
+</header>
+
+<div class="container">
+  <h2>7) Resource Scheduling, Resource Allocation, Resource Management Tools in Virtual Clusters</h2>
+
+  <h3>Resource Scheduling:</h3>
+  <ul>
+    <li>The VMM (also called as hypervisor) is responsible for sharing the resources to different virtual machines.</li>
+    <li>The Hypervisor uses a Scheduling Algorithm to know how the resources are allocated.</li>
+    <li>Types of Scheduling Algorithm:
+      <ul>
+        <li><strong>Proportional share:</strong>
+          <ul>
+            <li>It is a Fair Share.</li>
+            <li>Each VM gets resources based on its assigned weights.</li>
+          </ul>
+        </li>
+        <li><strong>Priority-Based Scheduling:</strong>
+          <ul>
+            <li>VM gets resources based on Priority levels.</li>
+            <li>Higher priority VMs get resources before lower priority ones.</li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Resource Allocation:</h3>
+  <ul>
+    <li>Resource allocation means assigning physical hardware (like CPU, memory, storage) to virtual machines.</li>
+    <li>Key Concepts:
+      <ul>
+        <li><strong>Dynamic Scaling:</strong>
+          <ul>
+            <li>It automatically adds or removes resources based on the workloads.</li>
+          </ul>
+        </li>
+        <li><strong>Load Balancing:</strong>
+          <ul>
+            <li>It distributes the workloads across multiple servers.</li>
+            <li>Load Balancing Algorithm is mainly of two types:
+              <ul>
+                <li>Static Load Balancing Algorithm</li>
+                <li>Dynamic Load Balancing Algorithm</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Resource Management Tools:</h3>
+  <ul>
+    <li><strong>OpenNebula</strong></li>
+    <li><strong>Nimbus</strong></li>
+    <li><strong>Eucalyptus</strong></li>
+    <li><strong>VMware vSphere</strong></li>
+  </ul>
+</div>
+<!-- Question 8 -->
+<header>
+  CC Unit-02
+</header>
+
+<div class="container">
+  <h2>8) Serverless Computing in the Context of Virtualization</h2>
+
+  <ul>
+    <li>Serverless computing is an evolution of virtualization where developers can run the application without maintaining the servers.</li>
+    <li>In Serverless Computing, developers only write and deploy the code.</li>
+    <li>Serverless Computing is built by using these Virtual Technologies:
+      <ul>
+        <li>Virtual Machines (VMs)</li>
+        <li>Containers</li>
+        <li>Virtual Clusters</li>
+      </ul>
+    </li>
+  </ul>
+
+  <h3>Benefits of Serverless Computing:</h3>
+  
+  <h4>i) No Server Management:</h4>
+  <ul>
+    <li>Developers can run the application without maintaining the servers.</li>
+  </ul>
+
+  <h4>ii) Developer Efficiency:</h4>
+  <ul>
+    <li>Developers only write and deploy the code.</li>
+  </ul>
+
+  <h4>iii) Runs on Demand:</h4>
+  <ul>
+    <li>Code only runs when a particular event is triggered.</li>
+  </ul>
+
+  <h4>iv) Cost Efficient:</h4>
+  <ul>
+    <li>You only pay for the time your code runs.</li>
+  </ul>
+
+  <h3>Examples:</h3>
+  <ul>
+    <li><strong>AWS Lambda</strong></li>
+    <li><strong>Google Cloud Functions</strong></li>
+    <li><strong>Microsoft Azure Functions</strong></li>
+  </ul>
+</div>
+
+
+</body>
+</html>
